@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Turismo Real - Index";
+    Layout = "/Views/Shared/layout2.cshtml";
+}
+
+
+<form class="buscador" asp-action="Buscar"> 
+    <div style="display:flex;">
+        <h2 class="vietnam semibold naranjo titulo">¿A donde vas?</h2>
+        <h2 class="vietnam semibold naranjo titulo">Llegada</h2>
+        <h2 class="vietnam semibold naranjo titulo">Salida</h2>
+        <h2 class="vietnam semibold naranjo titulo">¿Cuantos van?</h2>
+    </div>
+    <div class="cajabusqueda">
+        <div>
+            <select class="open texto" name="cantidad" id="cantidad">
+                <option value="1">Viña del mar</option>
+                <option value="2">La Serena</option>
+                <option value="3">Pucón</option>
+                <option value="4">Puerto varas</option>
+            </select>
+        </div>
+        @*<div><input class="open texto" placeholder="Destino Ej: Santiago" /></div>*@
+        <div><input class="open texto" type="date" /></div>
+        <div><input class="open texto" type="date" /></div>
+        <div>
+            <select class="open texto" name="cantidad" id="cantidad">
+                <option value="1 Persona">1 Persona</option>
+                <option value="2 Personas">2 Personas</option>
+                <option value="3 Personas">3 Personas</option>
+                <option value="4 Personas">4 Personas</option>
+            </select>
+        </div>
+        <button type="submit" class="buscar bnaranjo open semibold titulo blanco">Buscar</button>
+    </div>
+</form>
+<div class="container">
+    <h2 class="text-center">Bienvenido a nuestra web</h2>
+
+    <p class="text-center">Los departamentos con los mejores precios!!</p>
+</div>

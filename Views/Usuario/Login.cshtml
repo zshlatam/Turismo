@@ -1,0 +1,66 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Turismo.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Estilos.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<style>
+    .cajaLogin {
+        display: flex;
+        width: 750px;
+        height: 360px;
+        margin: 50px auto;
+        background: #F6F6F6;
+        -webkit-box-shadow: -2px 4px 4px 0px rgba(0,0,0,0.24);
+        -moz-box-shadow: -2px 4px 4px 0px rgba(0,0,0,0.24);
+        box-shadow: -2px 4px 4px 0px rgba(0,0,0,0.24);
+    }
+
+        .cajaLogin div {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .cajaLogin div img {
+                width: 180px;
+            }
+
+    .cajaLogincaja {
+        background: #474747;
+    }
+</style>
+
+<div class="cajaLogin">
+    <div>
+        <img src="/img/logoAzul.png" alt="TurismoReal">
+    </div>
+    <div class="cajaLogincaja ">
+        <form asp-action="Login" >
+            <input class="vietnam" style="width:250px; height:40px; margin-bottom:15px;" type="email" asp-for="Email" placeholder="Correo electronico"><br>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input class="vietnam" style="width: 250px; height: 40px; margin-bottom: 15px;" type="password" asp-for="Password" placeholder="Contraseña"><br>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input class="vietnam blackbold" style="width: 250px; margin-bottom: 15px; height: 40px; background: #0468BF; color: #ffffff; border: none; " type="submit" value="INGRESAR">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="Recuerdame" />
+                <label class="form-check-label" style="color: #ffffff;" asp-for="Recuerdame"></label>
+            </div>
+            <a class="nav-link dark-text" asp-controller="usuario" asp-action="Registro">
+                Registrarme
+            </a>            
+        </form>
+    </div>
+</div>
+
+
+

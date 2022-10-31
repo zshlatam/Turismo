@@ -1,0 +1,23 @@
+﻿@model CheckInCreacionViewModel
+@{
+    ViewData["Title"] = "Crear CheckIn";
+}
+<h2 class="fw-bold">Crear CheckIn </h2>
+<
+<input asp-format="" type="text" asp-for="Descripcion" class="form-control" />
+<input type="number" asp-for="Id" class="form-control" />
+<input type="text" asp-for="Fecha" class="form-control" />
+<input type="text" asp-for="Email" class="form-control" />
+
+<div class="card text-center">
+    <div class="card-header">
+        Check In de Reserva NRO <a type="text" disabled asp-for="Id" class="form-control" />
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>

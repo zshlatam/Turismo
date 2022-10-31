@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EstadoDepartamento>
+@{
+    ViewData["Title"] = "Estados de Departamentos";
+}
+
+<h2>Estados de Departamentos</h2>
+
+<a asp-action="Crear" class="btn btn-primary mb-3">Crear nuevo</a>
+
+<div class="container">
+    <table class="table table-responsive table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.Descripcion</td>
+                    <td class="">
+                        <a class="btn btn-sm text-decoration-none btn-primary">Editar</a>
+                        <a class="btn btn-sm text-decoration-none btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

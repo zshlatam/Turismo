@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Reserva>
+@{
+    ViewData["Title"] = "Reserva";
+}
+
+<h2>Listado de Reservas</h2>
+
+<a asp-action="Crear" class="btn btn-primary mb-3">Crear Reserva</a>
+<a asp-controller="EstadoReserva" asp-action="Crear" class="btn btn-primary mb-3">Crear Estado para la reserva</a>
+
+<div class="container">
+    <table class="table table-responsive table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Departamento</th>
+                <th>Fecha de Reserva</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Termino</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.Departamento</td>
+                    <td>@i.FechaPedidoReserva</td>
+                    <td>@i.FechaReserva</td>
+                    <td>@i.FechaTerminoReserva</td>
+                    <td>@i.EstadoReserva</td>
+                    <td class="">
+
+                        <a asp-controller="CheckIn" asp-action="Crear" asp-route-id="@i.Id" class="btn btn-sm text-decoration-none btn-primary">Generar CheckIn</a>
+                        @if(i.EstadoReserva != "Cancelado"){
+                                    <a asp-action="CancelarReserva" asp-route-id="@i.Id" class="btn btn-sm text-decoration-none btn-danger">Cancelar Reserva</a>
+                        }
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

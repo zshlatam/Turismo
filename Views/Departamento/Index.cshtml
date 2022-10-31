@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Departamento>
+@{
+    ViewData["Title"] = "Departamentos";
+}
+
+<h2 class="fw-bold m-3">Departamentos</h2>
+<div class="container d-flex justify-content-start ">
+    <a asp-action="Crear" class="btn btn-primary mb-3 me-3">Add  Departamento</a>
+    <a asp-controller="Ciudad" asp-action="Crear" class="btn btn-primary mb-3 mx-3">Add Ciudad</a>
+    <a asp-controller="EstadoDepartamento" asp-action="Crear" class="btn btn-primary mb-3 mx-3">Add Estado </a>
+</div>
+
+<div class="container">
+    <table class="table table-responsive table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nro departamento</th>
+                <th>Habitaciones</th>
+                <th>Direccion</th>
+                <th>Ciudad</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.NroDepartamento</td>
+                    <td>@i.NroHabitaciones</td>
+                    <td>@i.Direccion</td>
+                    <td>@i.Ciudad</td>
+                    <td>@i.Estado</td>
+                    <td class="">
+                        <a asp-action="Editar" asp-route-id="@i.Id" class="btn btn-sm text-decoration-none btn-primary">Editar</a>
+                        <a asp-action="Borrar" asp-route-id="@i.Id" class="btn btn-sm text-decoration-none btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,85 @@
+﻿@model ServiciosDepartamento
+@{
+    ViewData["Title"] = "Servicios";
+}
+
+
+<h2 class="fw-bold">Servicios</h2>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-controller="ServiciosDepartamento" asp-action="Crear">
+    <div class="mb-3">
+        <label asp-for="Bano" class="form-label"></label>
+        <input type="checkbox" asp-for="Bano" class="form-check-input" />
+        <span asp-validation-for="Bano" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Cocina" class="form-label"></label>
+        <input type="checkbox" asp-for="Cocina" class="form-check-input" />
+        <span asp-validation-for="Cocina" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Piscina" class="form-label"></label>
+        <input type="checkbox" asp-for="Piscina" class="form-check-input" />
+        <span asp-validation-for="Piscina" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PatioTrasero" class="form-label"></label>
+        <input type="checkbox" asp-for="PatioTrasero" class="form-check-input" />
+        <span asp-validation-for="PatioTrasero" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Estacionamiento" class="form-label"></label>
+        <input type="checkbox" asp-for="Estacionamiento" class="form-check-input" />
+        <span asp-validation-for="Estacionamiento" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Jacuzzi" class="form-label"></label>
+        <input type="checkbox" asp-for="Jacuzzi" class="form-check-input" />
+        <span asp-validation-for="Jacuzzi" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tv" class="form-label"></label>
+        <input type="checkbox" asp-for="Tv" class="form-check-input" />
+        <span asp-validation-for="Tv" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Parilla" class="form-label"></label>
+        <input type="checkbox" asp-for="Parilla" class="form-check-input" />
+        <span asp-validation-for="Parilla" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Fumadores" class="form-label"></label>
+        <input type="checkbox" asp-for="Fumadores" class="form-check-input" />
+        <span asp-validation-for="Fumadores" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Wifi" class="form-label"></label>
+        <input type="checkbox" asp-for="Wifi" class="form-check-input" />
+        <span asp-validation-for="Wifi" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Lavadora" class="form-label"></label>
+        <input type="checkbox" asp-for="Lavadora" class="form-check-input" />
+        <span asp-validation-for="Lavadora" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CamaraSeguridad" class="form-label"></label>
+        <input type="checkbox" asp-for="CamaraSeguridad" class="form-check-input" />
+        <span asp-validation-for="CamaraSeguridad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="AireAcondicionado" class="form-label"></label>
+        <input type="checkbox" asp-for="AireAcondicionado" class="form-check-input" />
+        <span asp-validation-for="AireAcondicionado" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+</form>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
